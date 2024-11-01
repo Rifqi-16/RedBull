@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,0" />
+    <title>Red Bull Racing Team</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img src="img/Logo Red Bull.png" alt="Red Bull Logo" />
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Team</a></li>
+            <li><a href="#drivers">Drivers</a></li>
+            <li><a href="#car">Car</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main-content">
+      <section class="hero-section">
+        <h1>Red Bull Racing Team</h1>
+      </section>
+    </main>
+
+    <!-- About Team -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h1>About Red Bull Racing Team</h1>
+        <p>
+          Red Bull Racing is a Formula 1 team owned by the Austrian company Red
+          Bull GmbH. Since its debut in 2005, the team has evolved into one of
+          the most successful and innovative teams in the sport. Based in Milton
+          Keynes, UK, Red Bull Racing has become known for its aggressive
+          technical developments, strong driver lineup, and iconic branding.
+        </p>
+      </div>
+    </section>
+
+    <!-- Drivers -->
+    <section class="drivers" id="drivers">
+      <h2>The Drivers</h2>
+      <div class="drivers-grid">
+        <!-- Max Card -->
+        <div class="drivers-card">
+          <img src="img/Max Verstappen.avif" alt="Max Verstappen" />
+          <div class="drivers-info">
+            <h3>Max Verstappen</h3>
+            <p>3x World Champion - Red Bull Racing</p>
+          </div>
+        </div>
+        <!-- Perez Card -->
+        <div class="drivers-card">
+          <img src="img/perez.avif" alt="Sergio Perez" />
+          <div class="drivers-info">
+            <h3>Sergio Perez</h3>
+            <p>6x Grand Prix Winner - Red Bull Racing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car -->
+    <section class="car-section" id="car">
+      <h2>The Car</h2>
+      <div class="background-text">
+        <h1>RB<span class="number">20</span></h1>
+      </div>
+      <div class="car-image">
+        <img src="img/RB 20.webp" alt="RB20" />
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have a question or inquiries, feel free to reach out to us</p>
+      <form action="#" method="POST" class="contact-form">
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </p>
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </p>
+        <p>
+          <label for="fan?">Are You A Fan?:</label>
+          <select id="fan" name="fan?" required>
+            <option value="">Select</option>
+            <option value="fans">Fan</option>
+            <option value="not-a-fan">Not a Fan</option>
+          </select>
+        </p>
+        <p>
+          <label for="Message">Message:</label><br />
+          <textarea
+            id="Message"
+            name="Message"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+        </p>
+        <p>
+          <button type="submit">Submit</button>
+        </p>
+      </form>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu ul");
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("show");
+        });
+      });
+    </script>
+    <footer class="copyright">
+      <p>&copy; Rifqi-16. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

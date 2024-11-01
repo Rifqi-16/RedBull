@@ -1,0 +1,535 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-color: #0c1d34;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  gap: 5px;
+  z-index: 200;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+/* Active Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navbar Adjustments for Mobile */
+.nav-menu {
+  display: flex;
+}
+
+.navbar .nav-menu ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-menu li {
+  margin-right: 20px;
+}
+
+.navbar .nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Main */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../img/Max\ BG.jpg");
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(12, 29, 52, 0) 60%, #0c1d34 100%);
+  z-index: 1;
+}
+
+.hero-section {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 6rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+/* About */
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  background-color: #0c1d34;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.about-content {
+  display: flex;
+  max-width: 800px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.about-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Drivers */
+
+.drivers {
+  padding: 9rem 7% 10rem;
+}
+
+.drivers h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-color: aliceblue;
+}
+
+.drivers-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #ffffff;
+  border: 3px solid;
+}
+
+/* Max Verstappen card */
+.drivers-card:nth-child(1) {
+  background-color: #d81944;
+  border-color: aliceblue;
+}
+
+/* Sergio Perez card */
+.drivers-card:nth-child(2) {
+  background-color: #0047ab;
+  border-color: aliceblue;
+}
+
+/* Driver image */
+.drivers-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Driver information */
+.drivers-info h3 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.drivers-info p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.drivers-info p.stats {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Car */
+
+.car-section {
+  position: relative;
+  padding: 10rem 7% 7.7rem;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+}
+
+.car-section h2 {
+  position: relative;
+  padding: 10rem 7% 1.4rem;
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 4rem;
+  z-index: 2;
+}
+
+.background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.background-text h1 {
+  font-size: 20rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1;
+}
+
+.background-text .number {
+  color: #d81944;
+}
+
+.car-image {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: -8rem;
+}
+
+.car-image img {
+  width: 100%;
+  max-width: 1000px;
+  object-fit: contain;
+}
+
+/* Contact */
+.contact-section {
+  padding: 6rem 7% 2rem;
+  background-color: #0c1d34;
+  color: white;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 0.8rem 2rem;
+  background-color: #d81944;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #b2173a;
+}
+
+/* Footer */
+.copyright {
+  padding: 10rem 7% 1.4rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Media Query */
+
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 4rem;
+  }
+
+  .about-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .drivers h2 {
+    font-size: 3rem;
+  }
+
+  .car-section h2 {
+    font-size: 3rem;
+    padding: 5rem 5%;
+  }
+
+  .background-text h1 {
+    font-size: 15rem;
+  }
+
+  .car-image img {
+    max-width: 800px;
+  }
+
+  .contact-section h2 {
+    font-size: 3rem;
+  }
+
+  .contact-form {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .navbar .logo img {
+    height: 30px;
+  }
+
+  /* hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar .nav-menu ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .nav-menu ul.show {
+    display: flex;
+  }
+
+  .nav-menu ul li {
+    margin: 10px 0;
+  }
+
+  .nav-menu ul li a {
+    font-size: 1.2rem;
+  }
+
+  .navbar .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+
+  .about-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .drivers h2 {
+    font-size: 2.5rem;
+  }
+
+  .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drivers-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .car-section h2 {
+    font-size: 2.5rem;
+    padding: 5rem 5% 1.4rem;
+  }
+
+  .background-text h1 {
+    font-size: 12rem;
+  }
+
+  .car-image img {
+    max-width: 600px;
+  }
+
+  .contact-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+  }
+
+  .drivers h2 {
+    font-size: 2rem;
+  }
+
+  .drivers-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .drivers-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .car-section h2 {
+    font-size: 2rem;
+    padding: 3rem 5% 1.4rem;
+  }
+
+  .background-text h1 {
+    font-size: 10rem;
+  }
+
+  .car-image img {
+    max-width: 100%;
+    margin-top: -6rem;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
